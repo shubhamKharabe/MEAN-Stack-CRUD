@@ -1,0 +1,57 @@
+<section class="list-all">
+    <h2 style="text-decoration: underline;">CRUD- MEAN Stack</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary addUserBtn" [routerLink]="[ '/add']">
+                Add New User
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Profile Image</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                        <th>Phone number</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userList">
+                        <td> <img [src]="user.profileImg" alt="" width="150px" height="150px"></td>
+                        <td>{{user.firstName?user.firstName:''}}</td>
+                        <td>{{user.lastName?user.lastName:''}}</td>
+                        <td>{{user.email?user.email:''}}</td>
+                        <td>{{user.phoneNumber?user.phoneNumber:''}}</td>
+                        <td>
+                            <button type="button" class="btn btn-secondary action-btn"
+                                [routerLink]="[ '/edit', user._id ]">Edit</button>
+                            <button type="button" class="btn btn-danger action-btn" data-toggle="modal"
+                                data-target="#myModal" (click)="selectUser(user)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p class="modal-msg">Are you sure?</p>
+                <p class="modal-msg">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger action-btn" data-dismiss="modal"
+                        (click)="deleteUser()">Submit</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
