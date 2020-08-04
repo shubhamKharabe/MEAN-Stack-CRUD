@@ -1,5 +1,5 @@
 # MEAN-Stack-CRUD
-MEAN Stack Angular 9 CRUD Operations for Beginners
+MEAN Stack Angular 9 CRUD Operations with image upload for Beginners
 
 A step by step MEAN Stack Tutorial from which you will learn to build Angular 9 CRUD App with Bootstrap 4, MongoDB, NodeJS and Express JS from scratch.
 
